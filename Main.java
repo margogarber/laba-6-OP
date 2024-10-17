@@ -29,7 +29,7 @@ public class Main{
         for(int i=0; i < length - 1; i++){
             int maxIndex = i;
             for(int j=i+1; j < length; j++){
-                if(arr[j] < arr[maxIndex]){
+                if(arr[j] > arr[maxIndex]){
                     maxIndex = j;
                 }
             }
