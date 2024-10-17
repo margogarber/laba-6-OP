@@ -1,16 +1,33 @@
+import java.util.Random;
+
 public class Main{
     public static void main(String[] args) {
-        long[] arr = new long[]{200L, 500L, 100L, 300L, 800L};
 
+        long[] arr = new long[1000];
+        Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextLong(10000);
+        }
+
+        long startTime = System.currentTimeMillis();
         bubbleSort(arr);
+        long endTime = System.currentTimeMillis();
         System.out.println("Bubble Sort: ");
         printArray(arr);
+        System.out.println("Took " + (endTime - startTime) + " ms");
 
-        arr = new long[]{500L, 1000L, 450L, 200L, 843L};
+        arr = new long[1000];
+        Random random2 = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random2.nextLong(10000);
+        }
+
+        startTime = System.currentTimeMillis();
         selectionSort(arr);
+        endTime = System.currentTimeMillis();
         System.out.println("Selection Sort: ");
         printArray(arr);
-
+        System.out.println("Took " + (endTime - startTime) + " ms");
     }
     public static void bubbleSort(long[] arr){
         int length = arr.length;
